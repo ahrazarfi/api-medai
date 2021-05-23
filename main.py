@@ -33,5 +33,5 @@ def get_image(disease: str, file: UploadFile = File(...)):
     prediction = prediction_Handler.predict(model, model_loaded, processed_Image)
     return prediction
 
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=5000)
+# if __name__ == "__main__":
+#     uvicorn.run("main:app", host="0.0.0.0", port=5000)
