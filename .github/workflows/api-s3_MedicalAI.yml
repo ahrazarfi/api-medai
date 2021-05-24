@@ -20,7 +20,7 @@ jobs:
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
-        python-version: '3.8'
+        python-version: '3.6'
 
     - name: Create and start virtual environment
       run: |
@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'MedicalAI'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_def03d80b80c483cb12d2445d91056ca }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_4228f769410e4ef4b50a6cf4de13029d }}
