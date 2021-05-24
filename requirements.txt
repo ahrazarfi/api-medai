@@ -49,6 +49,6 @@ tensorflow-estimator==2.5.0
 termcolor==1.1.0
 typing-extensions==3.7.4.3
 urllib3==1.26.4
-uvicorn==0.11.5
+uvicorn[standard]
 Werkzeug==2.0.1
 wrapt==1.12.1
