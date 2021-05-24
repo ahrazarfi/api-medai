@@ -2,17 +2,17 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get install 'ffmpeg'\
     'libsm6'\
     'libgl1'\
     'libxext6'  -y
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-deps -r requirements.txt
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
 
-CMD ["uvicorn", "main:app", "--workers", "2", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["gunicorn" "--bind=0.0.0.0" "--timeout 600" "--workers 3" "--worker-class" "uvicorn.workers.UvicornWorker" "app:app" ]
