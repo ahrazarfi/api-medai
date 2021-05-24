@@ -1,0 +1,1 @@
+apt-get install ffmpeg libsm6 libgl1 libxext6 -y
